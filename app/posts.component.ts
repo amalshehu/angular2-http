@@ -35,13 +35,12 @@ export class PostsComponent implements OnInit {
         this.posts = posts;
       });
     }
-  }
-  addPost(){
+    addPost(){
 
-  this.newPost = {
-    title:this.title,
-    body:this.body
+    this.newPost = {
+      title:this.title,
+      body:this.body
+    }
+    this._postService.addPost(this.newPost);
+    }
   }
-  this._postService.addPost(this.newPost);
-  }
-}
