@@ -23,4 +23,7 @@ export class PostService{
   getPosts(){
     return this.posts;
   }
+  addPost(newPost){
+    console.log(newPost);
+  }
 }
