@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PostService } from './post.service';
+import {Post} from './post';
 
 @Component({
     selector: 'posts',
@@ -22,12 +23,14 @@ import { PostService } from './post.service';
     `
 })
 export class PostsComponent {
-  private posts;
+  private posts:Post[];
   private title;
   private body;
   private newPost;
   constructor(private _postService:PostService){
-    this.posts = this._postService.getPosts();
+    this._postService.getPosts().subscribe(posts =>{
+      this.posts = posts;
+    });
   }
   addPost(){
 
