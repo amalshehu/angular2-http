@@ -4,7 +4,7 @@ import { PostService } from './post.service';
 
 @Component({
     selector: 'my-app',
-    template: `<h1>Hello Angular</h1><posts></posts>`,
+    template: `<h1>Angular2 Services</h1><posts></posts>`,
 
 })
 
