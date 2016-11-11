@@ -34,7 +34,7 @@ export class PostsComponent implements OnInit {
       this._postService.getPosts().subscribe(posts => {
         this.posts = posts;
       });
-    
+    }
   }
   addPost(){
 
