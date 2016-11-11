@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-
+import { HttpModule, JsonpModule } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import {Post} from './post';
 @Injectable()
 export class PostService{
   private posts;
@@ -24,6 +28,6 @@ export class PostService{
     return this.posts;
   }
   addPost(newPost){
-    console.log(newPost);
+    this.posts.push(newPost);
   }
 }
