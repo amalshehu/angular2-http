@@ -7,11 +7,12 @@ import { FormsModule }   from '@angular/forms';
 
 import { PostsComponent } from './posts.component';
 import { PostService } from './post.service';
+import {Post} from './post';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,HttpModule, JsonpModule],
   declarations: [ AppComponent, PostsComponent ],
-  providers:[ PostService ],
+  providers:[ PostService, HttpModule ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
