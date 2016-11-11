@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { PostService } from './post.service';
 import {Post} from './post';
 
@@ -22,15 +22,19 @@ import {Post} from './post';
               </ul>
     `
 })
-export class PostsComponent {
+export class PostsComponent implements OnInit {
   private posts:Post[];
   private title;
   private body;
   private newPost;
   constructor(private _postService:PostService){
-    this._postService.getPosts().subscribe(posts =>{
-      this.posts = posts;
-    });
+
+  }
+    ngOnInit(){
+      this._postService.getPosts().subscribe(posts => {
+        this.posts = posts;
+      });
+    
   }
   addPost(){
 
